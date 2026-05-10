@@ -5,9 +5,11 @@ const heroContent = document.getElementById('hero-content');
 const introOverlay = document.getElementById('intro-overlay');
 const typewriterElement = document.getElementById('typewriter');
 const confirmBtn = document.getElementById('confirm-entry');
+const introAudio = document.getElementById('intro');
 const radioNoise = document.getElementById('radio-noise');
 const erythrosEntrance = document.getElementById('erythros-entrance');
 
+introAudio.volume = 0.25;
 radioNoise.volume = 0.15;
 
 diveBtn.addEventListener('click', () => {

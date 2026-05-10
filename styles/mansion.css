@@ -1,0 +1,56 @@
+:root { --red: #FF2638; }
+
+.portal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('../images/mansion.png') no-repeat center/cover;
+    height: 100vh;
+}
+
+.speech-bubble {
+    position: absolute; left: 5%; top: 15%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid var(--red);
+    padding: 20px; width: 320px; border-radius: 15px;
+    box-shadow: 0 0 20px var(--red);
+    z-index: 120;
+}
+
+.speech-bubble::after {
+    content: ''; position: absolute; bottom: -20px; left: 30px;
+    border-width: 20px 20px 0 0; border-style: solid; border-color: var(--red) transparent;
+}
+
+.house-image {
+    position: absolute;
+    top: 40%;
+    left: 32%;
+    width: 470px;
+    height: 370px;
+    /* border: 5px solid #222; */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Ефект при наведенні - будинок починає червоніти */
+.house-image:hover {
+    box-shadow: 0 0 50px red;
+    filter: sepia(1) saturate(5) hue-rotate(-50deg);
+}
+
+/* Анімація тріщин (глітч) */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-5px, 5px); }
+    40% { transform: translate(-5px, -5px); }
+    60% { transform: translate(5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    100% { transform: translate(0); }
+}
+
+.active-portal {
+    animation: glitch 0.2s infinite;
+    filter: invert(1) hue-rotate(180deg) !important;
+}

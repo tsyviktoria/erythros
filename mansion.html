@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansion | Project Rubedo</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/mansion.css">
+</head>
+<body>    
+    <div id="mansion-scene" class="portal-container">
+        <div id="intro-overlay" class="hidden-overlay">
+            <div class="terminal-text" id="typewriter"></div>
+        </div>
+        <div class="speech-bubble">
+            <p id="speech-text"></p>
+        </div>
+        <div class="house-image" id="house"></div>
+    </div>
+    
+    <audio id="song" src="audio/songs/Kate Bush - Running Up The Hill.mp3" autoplay loop></audio>
+    <audio id="warning-speech" src="audio/mansion/warning-speech.mp3"></audio>
+    <audio id="alarm-speech" src="audio/mansion/alarm-speech.mp3"></audio>
+    <audio id="subject-missing" src="audio/mansion/subject-missing.mp3"></audio>
+        
+    <script src="scripts/utils/typeEffects.js"></script>
+    <script src="scripts/mansion.js"></script>
+</body>
+</html>

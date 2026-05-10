@@ -56,6 +56,46 @@ body {
 
 .hidden { display: none !important; }
 
+/* Стилі для блоку overlay */
+.hidden-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none; /* Спочатку не існує в потоці */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.show-overlay {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+/* Cтилі терміналу та кнопок */
+.terminal-text {
+    font-family: 'Courier New', monospace;
+    color: #FF2638;
+    font-size: 1.5rem;
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 38, 56, 0.5);
+    min-height: 150px;
+}
+
+/* Курсор, що блимає */
+.terminal-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
 #continue-btn {
     background: transparent;
     border: 1px solid var(--primary-red);
