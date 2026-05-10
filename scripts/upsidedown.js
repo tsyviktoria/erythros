@@ -97,5 +97,5 @@ function checkAnswer(index) {
 
 // // Кнопка продовження шляху
 continueBtn.addEventListener('click', () => {
-    window.location.href = "/mansion.html"
+    window.location.href = "mansion.html"
 });
