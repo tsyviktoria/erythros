@@ -101,10 +101,10 @@ function handleHeadphones(choice) {
 continueBtn.addEventListener('click', () => {
     if (!playerHasHeadphones) {
         // Логіка для Векни (перезавантаження)
-        window.location.href = "/upsidedown.html"
+        window.location.href = "upsidedown.html"
     } else {
         //alert("Ви прямуєте глибше в ліс під звуки Running Up That Hill...");
         // Тут перехід до наступної сцени
-        window.location.href = "/castle.html"
+        window.location.href = "mansion.html"
     }
 });

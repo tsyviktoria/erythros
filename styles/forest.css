@@ -100,8 +100,8 @@ body, html { margin: 0; padding: 0; background: #000; color: white; font-family:
     text-transform: uppercase;
     cursor: pointer;
     position: absolute;
-    top: 40%;
-    left: 55%;
+    top: 45%;
+    left: 40%;
     overflow: hidden;
     transition: all 0.4s ease;
     /* Ефект легкого світіння */
