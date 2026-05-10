@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erythros | Project Rubedo</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Блок космонавта -->
+    <div id="intro-overlay" class="hidden-overlay">
+        <div class="terminal-text" id="typewriter"></div>
+        <button id="confirm-entry" class="hidden">ПІДТВЕРДИТИ ВХІД</button>
+    </div>
+
+    <!-- Головний екран -->
+    <div id="main-hero" class="hero">
+        <nav class="navbar">
+            <div class="logo">RUBEDO<span>.sys</span></div>
+        </nav>
+
+        <div class="container">
+            <div class="hero-text" id="hero-content">
+                <h2 class="subtitle">ОБ'ЄКТ: ERYTHROS</h2>
+                <h1 class="main-title">Межа <br><span>Вивороту</span></h1>
+                <p class="description">
+                    Дослідіть аномальну екосистему червоної планети. 
+                    Гравітаційні розломи та невідомі форми життя чекають на вашу експедицію.
+                </p>
+                <div class="cta-group">
+                    <button id="dive-btn" class="btn btn-primary">Почати занурення</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item"><span>Кисень:</span> 0.2%</div>
+            <div class="stat-item"><span>Радіація:</span> Висока</div>
+            <div class="stat-item"><span>Статус:</span> З'єднано</div>
+        </div>
+
+        <!-- Аудіо -->
+        <audio id="radio-noise" src="audio/radio-noise.wav" loop></audio>
+        <audio id="erythros-entrance" src="audio/erythros-entrance.mp3"></audio>
+    </div>
+   <script src="scripts/utils/typeEffects.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

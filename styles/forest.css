@@ -1,0 +1,99 @@
+:root { --red: #FF2638; }
+
+body, html { margin: 0; padding: 0; background: #000; color: white; font-family: 'Courier New', monospace; overflow: hidden; }
+
+/* Ліс */
+#forest-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/forest.png') center/cover;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100;
+}
+
+/* Глітч (помехи) */
+.glitch-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(255, 38, 56, 0.1) 0px, transparent 2px);
+    pointer-events: none; z-index: 110; display: none;
+}
+.glitch-active { display: block; animation: shake 0.1s infinite; }
+
+@keyframes shake {
+    0% { transform: translate(2px, 2px); filter: contrast(150%); }
+    50% { transform: translate(-2px, -2px); filter: hue-rotate(45deg); }
+    100% { transform: translate(1px, 1px); }
+}
+
+/* Хмаринка тексту */
+.speech-bubble {
+    position: absolute; left: 5%; top: 15%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid var(--red);
+    padding: 20px; width: 320px; border-radius: 15px;
+    box-shadow: 0 0 20px var(--red);
+    z-index: 120;
+}
+
+.speech-bubble::after {
+    content: ''; position: absolute; bottom: -20px; left: 30px;
+    border-width: 20px 20px 0 0; border-style: solid; border-color: var(--red) transparent;
+}
+
+/* Контейнер гри */
+.game-container {
+    background: rgba(10, 0, 0, 0.95); 
+    border: 2px solid var(--red);
+    padding: 30px; 
+    text-align: center; 
+    z-index: 200;
+}
+
+#repair-btn {
+    background: var(--red); color: white; border: none;
+    padding: 15px 30px; cursor: pointer; font-weight: bold; margin-top: 15px;
+}
+
+/* Контейнер вибору */
+.choice-container {
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid var(--red);
+    padding: 30px;
+    text-align: center;
+    z-index: 300;
+    max-width: 400px;
+    box-shadow: 0 0 40px var(--red);
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+
+.headphones-img {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--red);
+}
+
+.poll-btns button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Courier New';
+    transition: 0.3s;
+}
+
+.poll-btns button:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+#continue-btn {
+    position: absolute;
+    bottom: 10%;
+    z-index: 1000;
+}
+
+.hidden { display: none !important; }

@@ -1,0 +1,261 @@
+
+/* Контент зміщуємо вправо, бо планета зліва */
+.container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+
+/* Основний блок з фоном */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)), 
+                url('../images/space_bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: right;
+}
+
+.subtitle {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-red);
+    letter-spacing: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.main-title span {
+    text-shadow: 0 0 20px var(--primary-red);
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Кнопки */
+.cta-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background: var(--primary-red);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #cc1f2d;
+    box-shadow: 0 0 25px rgba(255, 38, 56, 0.6);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+/* Футер зі статами */
+.stats-bar {
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    gap: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    border-top: 1px solid rgba(255, 38, 56, 0.3);
+}
+
+.stat-item span { color: var(--primary-red); margin-right: 5px; }
+
+/* Стилі для вступної анімації */
+/* Ефект зникнення головного тексту */
+.fade-out {
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 1s ease, filter 1s ease;
+    pointer-events: none;
+}
+
+/* Стилі для блоку космонавта */
+.hidden-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none; /* Спочатку не існує в потоці */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.show-overlay {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+/* Решта стилів терміналу та кнопок залишається з попереднього кроку */
+
+/* Решта стилів терміналу та кнопок залишається з попереднього кроку */
+
+.terminal-text {
+    font-family: 'Courier New', monospace;
+    color: #FF2638;
+    font-size: 1.5rem;
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 38, 56, 0.5);
+    min-height: 150px;
+}
+
+/* Курсор, що блимає */
+.terminal-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#start-tour {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: transparent;
+    border: 1px solid #FF2638;
+    color: #FF2638;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    transition: 0.5s;
+}
+
+#start-tour:hover {
+    background: #FF2638;
+    color: black;
+    box-shadow: 0 0 30px #FF2638;
+}
+
+.content-hidden {
+    filter: blur(20px);
+    opacity: 0;
+    transition: 2s ease-in-out;
+}
+
+.content-visible {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.hidden { display: none; }
+
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .container { justify-content: center; padding-right: 0; text-align: center; }
+    .hero-text { text-align: center; padding: 20px; }
+    .main-title { font-size: 2.5rem; }
+    .cta-group { justify-content: center; }
+    .nav-links { display: none; }
+}
+
+#confirm-entry {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    padding: 18px 45px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    /* Ефект легкого світіння */
+    box-shadow: inset 0 0 10px rgba(255, 38, 56, 0.2), 0 0 10px rgba(255, 38, 56, 0.2);
+}
+
+/* Анімація при наведенні */
+#confirm-entry:hover {
+    background: var(--primary-red);
+    color: #000;
+    box-shadow: 0 0 40px var(--primary-red);
+    transform: scale(1.05);
+}
+
+/* Додаємо "скануючу" смужку, яка проходить крізь кнопку */
+#confirm-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 38, 56, 0.4),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+#confirm-entry:hover::before {
+    left: 100%;
+}
+
+/* Пульсація кнопки, щоб привернути увагу */
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 10px rgba(255, 38, 56, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(255, 38, 56, 0.7); }
+    100% { box-shadow: 0 0 10px rgba(255, 38, 56, 0.4); }
+}
+
+#confirm-entry:not(.hidden) {
+    animation: pulse-red 2s infinite;
+}

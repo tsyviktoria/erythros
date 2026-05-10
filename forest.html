@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Sector - Forest | Erythros</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/forest.css">
+</head>
+<body>   
+    <div id="forest-screen" class="hidden">
+        <div id="glitch-overlay" class="glitch-layer"></div>
+        <div class="speech-bubble left">
+            <p id="forest-text"></p>
+        </div>
+        
+        <div id="repair-box" class="game-container hidden">
+            <h3>ЗВ'ЯЗОК ПЕРЕРВАНО: СИНХРОНІЗАЦІЯ</h3>
+            <p>Клацніть на шлюз 5 разів для відновлення сигналу</p>
+            <div class="counter">Сигнал: <span id="count">0</span>/5</div>
+            <button id="repair-btn">СТАБІЛІЗУВАТИ</button>
+        </div>
+    </div>
+
+    <div id="space-screen" class="hero">
+        <div class="speech-bubble left">
+            <p id="welcome-text"></p>
+        </div>
+    </div>
+
+    <!-- Квест із навушниками -->
+    <div id="headphones-choice" class="choice-container hidden">
+        <img src="images/headphones.webp" alt="Headphones" class="headphones-img">
+        <h3>УВАГА: МЕНТАЛЬНА ЗАГРОЗА</h3>
+        <p>Взяти навушники для захисту розуму?</p>
+        <div class="poll-btns">
+            <button onclick="handleHeadphones(true)">ВЗЯТИ</button>
+            <button onclick="handleHeadphones(false)">ВІДМОВИТИСЬ</button>
+        </div>
+    </div>
+
+    <!-- Кнопка продовження -->
+    <button id="continue-btn" class="btn-primary hidden">ПРОДОВЖИТИ ШЛЯХ</button>
+
+    <!-- Аудіо -->
+    <audio id="kate-bush-song" src="audio/songs/Kate Bush - Running Up The Hill.mp3" loop></audio> 
+    <audio id="radio-noise" src="audio/radio-noise.wav" autoplay loop></audio>
+    <audio id="red-sector-entrance" src="audio/red-sector-entrance.mp3"></audio>
+    <audio id="signal-repair-request" src="audio/forest/signal-repair-request.mp3"></audio>
+    <audio id="warning-speach" src="audio/forest/warning-speach.mp3"></audio>
+    <audio id="choise-refuse" src="audio/forest/choise-refuse.mp3"></audio>
+    <audio id="choise-confirm" src="audio/forest/choise-confirm.mp3"></audio>
+</div>
+   <script src="scripts/utils/typeEffects.js"></script>
+   <script src="scripts/forest.js"></script>
+</body>
+</html>
