@@ -1,6 +1,9 @@
 const welcomeMsg = "Вітаю, досліднику. Ми щойно увійшли в атмосферу Erythros. Готуйся, зараз почнеться найцікавіше... Перехід у червоний сектор ініційовано.";
 const forestMsg = "Ми на місці... Зачекай! Прийом! Аномалія лісу надто потужна! Зв'язок розривається! Мені потрібна твоя допомога!";
 const warningMsg = "Фух... Зв'язок стабільний. Але слухай уважно: на цій планеті істоти можуть проникати у твою свідомість. Єдиний спосіб врятуватись — музика. Візьми ці навушники, це твій єдиний шанс.";
+const choiseRejectMessage = "Я тебе попереджав, досліднику... але ти мене не послухав. Наслідки будуть на твоїй совісті. Рушаймо, якщо наважишся.";
+const choiseConfirmMessage = "Розумний вибір. Вмикаю захисний протокол 'Kate Bush'. Тепер ми можемо йти далі.";
+
 
 const welcomeElement = document.getElementById('welcome-text');
 const forestElement = document.getElementById('forest-text');
@@ -76,18 +79,21 @@ function handleHeadphones(choice) {
     playerHasHeadphones = choice;
 
     if (choice) {
-        forestElement.innerHTML = "Розумний вибір. Вмикаю захисний протокол 'Kate Bush'. Тепер ми можемо йти далі.";
         choiseConfirmAudio.play();
-        // Вмикаємо музику через 2 секунди
-        setTimeout(() => {
-            kateBushAudio.play();
-            choiseConfirmAudio.pause();
-            continueBtn.classList.remove('hidden');
-        }, 2000);
+        typeEffect(forestElement, choiseConfirmMessage, () => {
+            // Вмикаємо музику через 2 секунди
+            setTimeout(() => {
+                kateBushAudio.play();
+                choiseConfirmAudio.pause();
+                continueBtn.classList.remove('hidden');
+            }, 2000);
+        });
+
     } else {
-        forestElement.innerHTML = "Я тебе попереджав, досліднику... але ти мене не послухав. Наслідки будуть на твоїй совісті. Рушаймо, якщо наважишся.";
-        continueBtn.classList.remove('hidden');
         choiseRefuseAudio.play();
+        typeEffect(forestElement, choiseRejectMessage, () => {
+            continueBtn.classList.remove('hidden');
+        });
     }
 }
 
