@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vecna's Curse | Project Rubedo</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/upsidedown.css">
+</head>
+<body>
+    <div id="vecna-scene">
+        <div class="vignette"></div>
+        <div id="glitch-bg" class="glitch-overlay"></div>
+        
+        <div class="vecna-bubble">
+           <p id="speech-text"></p>
+        </div>
+
+        <div class="quiz-container">
+            <div id="question-box" class="question-card hidden">
+                <p id="question-text">Скільки ударів годинника ти чуєш перед тим, як я приходжу за тобою?</p>
+                <div class="options" id="options-container">
+                </div>
+            </div>
+
+            <div id="timer-box" class="timer hidden">
+                <span id="seconds">10</span>s
+            </div>
+        </div>
+    </div>
+
+      <!-- Кнопка продовження -->
+    <button id="continue-btn" class="btn-primary hidden">ПРОДОВЖИТИ ШЛЯХ</button>
+
+    <audio id="clock" src="audio/clock.mp3" autoplay loop />
+    <audio id="scream" src="audio/scream.mp3" />
+    <audio id="vecna-voice-1" src="audio/upsidedown/vacnas voice.mp3" />
+    <audio id="vecna-voice-2" src="audio/upsidedown/vecnas voice2.mp3" />
+    <script src="scripts/utils/typeEffects.js"></script>
+    <script src="scripts/upsidedown.js"></script>
+</body>
+</html>

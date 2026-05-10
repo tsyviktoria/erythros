@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Special+Elite&display=swap');
+
+:root {
+    --red: #FF2638;
+}
+
+/* Ефект віньєтки та темряви */
+.vignette {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 30%, black 100%);
+    z-index: 5; pointer-events: none;
+}
+
+#vecna-scene {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: url('../images/upsidedown.png') center/cover; /* Твоє фото лігва Векни */
+}
+
+.quiz-container {
+    position: relative; z-index: 10; text-align: center; max-width: 600px; padding: 20px;
+}
+
+/* #vecna-speech {
+    color: var(--vecna-red); font-size: 1.8rem; letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 38, 56, 0.7); margin-bottom: 40px;
+} */
+
+.vecna-bubble {
+    position: absolute; left: 5%; top: 15%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid var(--red);
+    padding: 20px; width: 320px; border-radius: 15px;
+    box-shadow: 0 0 20px var(--red);
+    z-index: 120;
+}
+
+.vecna-bubble::after {
+    content: ''; position: absolute; bottom: -20px; left: 30px;
+    border-width: 20px 20px 0 0; border-style: solid; border-color: var(--red) transparent;
+}
+
+.question-card {
+    background: rgba(0, 0, 0, 0.85); border: 1px solid var(--red);
+    padding: 30px; border-radius: 5px; box-shadow: 0 0 30px rgba(255, 38, 56, 0.3);
+}
+
+.options {
+    display: flex; flex-direction: column; gap: 15px; margin-top: 20px;
+}
+
+.option-btn {
+    background: transparent; border: 1px solid white; color: white;
+    padding: 12px; cursor: pointer; transition: 0.3s; font-family: 'Orbitron', sans-serif;
+}
+
+.option-btn:hover {
+    background: var(--red); border-color: var(--red);
+    box-shadow: 0 0 15px var(--red); color: black;
+}
+
+.timer {
+    margin-top: 20px; font-size: 2rem; color: var(--red);
+    animation: pulse 1s infinite;
+}
+
+#continue-btn {
+    background: transparent;
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    padding: 24px 64px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    /* Ефект легкого світіння */
+    box-shadow: inset 0 0 10px rgba(255, 38, 56, 0.2), 0 0 10px rgba(255, 38, 56, 0.2);
+    z-index: 150;
+}
+
+#continue-btn:hover {
+    background: var(--primary-red);
+    color: #000;
+    box-shadow: 0 0 40px var(--primary-red);
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.hidden { display: none; }
